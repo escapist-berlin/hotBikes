@@ -8,13 +8,19 @@
 
 require 'faker'
 
+User.destroy_all
+Bike.destroy_all
+Booking.destroy_all
+
+user = User.create(email: "blah@blah.com", password: "blah123")
+
 puts 'Creating 20 fake bikes...'
 20.times do
   bike = Bike.new(
     title: Faker::Company.name,
-    price: rand(10..20),
-    user_id: 1
+    price: rand(10..20)
   )
+  bike.user = user
   bike.save!
 end
 puts 'Finished!'
