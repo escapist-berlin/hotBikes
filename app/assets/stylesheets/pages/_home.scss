@@ -1,1 +1,14 @@
 // Specific CSS for your home-page
+body {
+  font-family: system-ui;
+  background: #fff;
+  color: dark grey;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center
+  }
