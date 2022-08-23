@@ -8,19 +8,32 @@
 
 require 'faker'
 
-User.destroy_all
-Bike.destroy_all
 Booking.destroy_all
+Bike.destroy_all
+User.destroy_all
 
-user = User.create(email: "blah@blah.com", password: "blah123")
+denis = User.create(email: "denis@gmail.com", password: "denis123")
+alex = User.create(email: "alex@gmail.com", password: "alex123")
+lauren = User.create(email: "lauren@gmail.com", password: "lauren123")
+yemmy = User.create(email: "yemmy@gmail.com", password: "yemmy123")
+users = [denis, alex, lauren, yemmy]
 
-puts 'Creating 20 fake bikes...'
-20.times do
+puts 'Creating 10 fake bikes...'
+10.times do
   bike = Bike.new(
     title: Faker::Company.name,
-    price: rand(10..20)
+    price: rand(10..50)
   )
-  bike.user = user
+  bike.user = users.sample
   bike.save!
+
+  puts 'Creating a fake booking'
+  1.times do
+    booking = Booking.create(
+      user: users.sample,
+      bike: bike
+    )
+  end
 end
+
 puts 'Finished!'
