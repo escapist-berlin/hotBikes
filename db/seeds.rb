@@ -5,3 +5,35 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+require 'faker'
+
+Booking.destroy_all
+Bike.destroy_all
+User.destroy_all
+
+denis = User.create(email: "denis@gmail.com", password: "denis123")
+alex = User.create(email: "alex@gmail.com", password: "alex123")
+lauren = User.create(email: "lauren@gmail.com", password: "lauren123")
+yemmy = User.create(email: "yemmy@gmail.com", password: "yemmy123")
+users = [denis, alex, lauren, yemmy]
+
+puts 'Creating 10 fake bikes...'
+10.times do
+  bike = Bike.new(
+    title: Faker::Company.name,
+    price: rand(10..50)
+  )
+  bike.user = users.sample
+  bike.save!
+
+  puts 'Creating a fake booking'
+  1.times do
+    booking = Booking.create(
+      user: users.sample,
+      bike: bike
+    )
+  end
+end
+
+puts 'Finished!'
