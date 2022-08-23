@@ -1,14 +1,33 @@
 // Specific CSS for your home-page
-body {
+.bike-banner {
   font-family: system-ui;
-  background: #fff;
-  color: dark grey;
+  color:white;
   text-align: center;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  // display: flex;
+  // justify-content: space-around;
+  // align-items: center;
+  // background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/background-image.jpg');
 }
 
-.form-group {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  justify-content: center
+#home-form {
+  text-align: center;
+  padding: 15px;
   }
+
+#h1-home {
+  font-size: 60px;
+}
+
+#h2-home {
+  text-align: center;
+  color: white;
+  opacity: 0.8;
+  font-size: 25px;
+  font-weight: lighter;
+  margin-bottom: 30 px;
+}
