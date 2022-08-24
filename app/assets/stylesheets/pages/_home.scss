@@ -3,7 +3,7 @@
   font-family: system-ui;
   color:white;
   text-align: center;
-  height: 100vh;
+  height: 200vh;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -14,9 +14,25 @@
   // background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/background-image.jpg');
 }
 
+.img{
+  width:100%;
+  height: 400px;
+  background: url("../../assets/images/home/background-image.jpg");
+}
+
+.background-image {
+  background-image: asset-url("background-image.jpg");
+  background-size: cover;
+  opacity: 85%;
+}
+
 #home-form {
   text-align: center;
-  padding: 15px;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  opacity: 75%;
   }
 
 #h1-home {
