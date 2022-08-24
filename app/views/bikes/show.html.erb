@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center align-items-center flex-nowrap">
+<div class="show-container">
   <h2><%= @bike.title %></h2>
   <p><%= @bike.price %>€</p>
 
@@ -6,7 +6,4 @@
     <%= cl_image_tag @bike.photo.key, height: 300, width: 400, crop: :fill %>
   <% end %>
   <%= link_to "Book this bike!", new_bike_booking_path(@bike) %>
-</div>
-
-<div class="">
 </div>
