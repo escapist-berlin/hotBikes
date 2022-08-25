@@ -18,11 +18,14 @@ lauren = User.create(email: "lauren@gmail.com", password: "lauren123")
 yemmy = User.create(email: "yemmy@gmail.com", password: "yemmy123")
 users = [denis, alex, lauren, yemmy]
 
+locations = ["Berlin", "Hamburg", "Munich"]
+
 puts 'Creating 10 fake bikes...'
-10.times do
+30.times do
   bike = Bike.new(
     title: Faker::Company.name,
-    price: rand(10..50)
+    price: rand(10..50),
+    address: locations.sample
   )
   bike.user = users.sample
   bike.save!

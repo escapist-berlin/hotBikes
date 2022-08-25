@@ -1,19 +1,35 @@
 // Specific CSS for your home-page
+.head {
+font-family: 'Roboto', sans-serif;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+text-decoration: none;
+text-transform: capitalize;
+border: none;
+outline: none;
+-webkit-transition: all 0.2s linear;
+-moz-transition: all 0.2s linear;
+-o-transition: all 0.2s linear;
+transition: all 0.2s linear;
+}
+
 .bike-banner {
   font-family: system-ui;
   color:white;
   text-align: center;
-  height: 200vh;
+  height: 100vh;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: right 100%;
   // display: flex;
   // justify-content: space-around;
   // align-items: center;
   // background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/background-image.jpg');
 }
-
+.title
 .img{
   width:100%;
   height: 400px;

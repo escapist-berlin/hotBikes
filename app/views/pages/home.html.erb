@@ -1,21 +1,28 @@
-<%# <div class="bike-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('assets/background-image.jpg');">
-  <h1 id="h1-home">hotBikes!</h1>
-  <h2 id="h2-home"> Connecting bike owners to bike renters</h2>
-  <form id="home-form">
-    <div class="form-group">
-      <input type="find your next bike" class="form-control" id="exampleInputBike" placeholder="find your next bike">
-    </div>
-  </form>
-</div> %>
+
+
 
  <div class="background-image bike-banner">
     <%# <%= image_tag "background-image.jpg" %>
     <h1 id="h1-home">hotBikes!</h1>
     <h2 id="h2-home"> Connecting bike owners to bike renters</h2>
-    <form id="home-form">
+    <%# <form id="home-form">
       <div class="form-group">
         <input type="find your next bike" class="form-control" id="exampleInputBike" placeholder="find your next bike">
       </div>
-    </form>
+    </form> %>
+
+
+    <%= form_with url: bikes_path, method: :get, class: "d-flex", id: "home-form" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-group",
+        placeholder: "Find a bike"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+
+
+
   <%# </div> %>
  </div>
+
