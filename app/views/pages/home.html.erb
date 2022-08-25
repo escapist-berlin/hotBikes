@@ -1,4 +1,4 @@
- 
+
 
 
  <div class="background-image bike-banner">
@@ -12,7 +12,7 @@
     </form> %>
 
 
-    <%= form_with url: bikess_path, method: :get, class: "d-flex", id: "home-form" do %>
+    <%= form_with url: bikes_path, method: :get, class: "d-flex", id: "home-form" do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-group",
@@ -25,3 +25,4 @@
 
   <%# </div> %>
  </div>
+
