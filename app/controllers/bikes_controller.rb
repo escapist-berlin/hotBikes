@@ -1,7 +1,11 @@
 class BikesController < ApplicationController
 
   def index
-    @bikes = Bike.all
+    if params[:query].present?
+      @bikes = Bike.where("address ILIKE ?", "%#{params[:query]}%")
+    else
+      @bikes = Bike.all
+    end
   end
 
   def show
