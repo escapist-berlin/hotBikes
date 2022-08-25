@@ -24,6 +24,13 @@ class BikesController < ApplicationController
     redirect_to bike_path(@bike)
   end
 
+  def destroy
+    @bike = Bike.find(params[:id])
+    @bike.destroy
+
+    redirect_to dashboard_path, status: :see_other
+  end
+
   private
 
   def bike_params
