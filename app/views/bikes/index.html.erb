@@ -1,4 +1,4 @@
-<div class="container d-flex flex-wrap">
+<div class="d-flex flex-wrap bikes-container">
   <% @bikes.each do |bike| %>
     <%= link_to(bike_path(bike)) do %>
       <% if bike.photo.attached? %>
