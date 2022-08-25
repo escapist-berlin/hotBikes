@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .head {
-font-family: 'Roboto', sans-serif;
+font-family: 'Andale Mono', monospace;
 -webkit-box-sizing: border-box;
 box-sizing: border-box;
 margin: 0;
@@ -16,7 +16,7 @@ transition: all 0.2s linear;
 }
 
 .bike-banner {
-  font-family: system-ui;
+  font-family: 'Andale Mono', monospace;
   color:white;
   text-align: center;
   height: 100vh;
@@ -52,14 +52,67 @@ transition: all 0.2s linear;
   }
 
 #h1-home {
-  font-size: 60px;
+  font-size: 150px;
+  color: black;
+  font-family: 'Andale Mono', monospace;
+  font-weight: 400;
+
 }
 
 #h2-home {
   text-align: center;
-  color: white;
+  color: black;
+  font-size: 100px;
   opacity: 0.8;
   font-size: 25px;
   font-weight: lighter;
   margin-bottom: 30 px;
+  font-family: 'Andale Mono', monospace;
+
+}
+
+.btn {
+  background-color: #fbeee0;
+  border: 1px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.form-group {
+  height: 50px;
+  width: 4000px;
+  background-color: transparent;
+  border: 2px solid #422800;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-right: 2px;
+  border-radius: 30px;
+  position: center;
+
+}
+
+.navbar-brand {
+  width: 150px;
+
 }
