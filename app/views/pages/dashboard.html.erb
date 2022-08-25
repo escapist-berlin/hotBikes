@@ -1,60 +1,67 @@
 <% if @user %>
 
-  <%# For users %>
+  <div class="mb-5">
 
-  <div class="dashboard-container">
-    <h1>Welcome to your dashboard!</h1>
+    <div class="d-flex justify-content-center m-3">
+      <h1>Welcome to your dashboard!</h1>
+    </div>
+
+    <div class="bookings-bikes">
+      <%# Bookings %>
+      <% if @user.booking_ids %>
+        <div class="dashboard-container">
+
+          <h2>These are your bookings:</h2>
+          <% @bookings.each do |booking| %>
+          <hr>
+          <% bike = Bike.find(booking.bike_id) %>
+          <p>You booked <strong><em><%= bike.title %></em></strong></p>
+
+          <% if bike.photo.attached? %>
+            <%= cl_image_tag bike.photo.key, height: 100, width: 150, crop: :fill %>
+          <% end %>
+
+          <% if booking.start_date && booking.end_date? %>
+            <p>You rented this bike from <%= booking.start_date %> till <%= booking.end_date %></p>
+          <% end %>
+
+          <% if booking.comment? %>
+            <p>Your comment: <%= booking.comment %></p>
+          <% end %>
+
+          <%= link_to "Delete this booking",
+            booking_path(booking),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+          %>
+        <% end %>
+        </div>
+      <% end %>
+
+      <%# Bikes %>
+      <% if @user.bike_ids %>
+        <div class="dashboard-container">
+          <h2>These are bikes you created:</h2>
+
+          <% @bikes.each do |bike| %>
+            <hr>
+            <h2><%= bike.title %></h2>
+            <p><%= bike.price %>€</p>
+
+            <div class="d-flex justify-content-center">
+              <% if bike.photo.attached? %>
+                <%= cl_image_tag bike.photo.key, height: 100, width: 150, crop: :fill %>
+              <% end %>
+            </div>
+
+            <%= link_to "Delete this bike",
+              bike_path(bike),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+            %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
   </div>
 
-  <% if @user.booking_ids %>
-    <div class="dashboard-container">
-
-      <h2>These are your bookings:</h2>
-      <% @bookings.each do |booking| %>
-      <hr>
-      <% bike = Bike.find(booking.bike_id) %>
-      <p>You booked <strong><em><%= bike.title %></em></strong></p>
-
-      <% if bike.photo.attached? %>
-        <%= cl_image_tag bike.photo.key, height: 100, width: 150, crop: :fill %>
-      <% end %>
-
-      <% if booking.start_date && booking.end_date? %>
-        <p>You rented this bike from <%= booking.start_date %> till <%= booking.end_date %></p>
-      <% end %>
-
-      <% if booking.comment? %>
-        <p>Your comment: <%= booking.comment %></p>
-      <% end %>
-
-      <%= link_to "Delete this booking",
-        booking_path(booking),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-      %>
-    <% end %>
-    </div>
-  <% end %>
-
-  <%# For bike owners %>
-
-  <% if @user.bike_ids %>
-    <div class="dashboard-container">
-      <h2>These are bikes you created:</h2>
-
-        <% @bikes.each do |bike| %>
-        <hr>
-        <%= bike.title %>
-        <%= bike.price %>
-
-        <% if bike.photo.attached? %>
-          <%= cl_image_tag bike.photo.key, height: 100, width: 150, crop: :fill %>
-        <% end %>
-
-        <%= link_to "Delete this bike",
-          bike_path(bike),
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-        %>
-      <% end %>
-    </div>
-  <% end %>
 <% end %>
