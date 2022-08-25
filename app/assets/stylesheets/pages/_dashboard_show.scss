@@ -3,8 +3,15 @@
   margin: 0 auto;
   text-align: center;
   width: max-content;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  border-radius: 3px 6px 9px 12px;
 
   img {
     display: block;
   }
+}
+
+.bookings-bikes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
