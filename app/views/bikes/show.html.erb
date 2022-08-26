@@ -5,5 +5,11 @@
   <% if @bike.photo.attached? %>
     <%= cl_image_tag @bike.photo.key, height: 300, width: 400, crop: :fill %>
   <% end %>
-  <%= link_to "Book this bike!", new_bike_booking_path(@bike) %>
+
+  <% if @bike.user == current_user %>
+        <%= link_to "Edit this bike", edit_bike_path(@bike) %>
+
+  <% else %>
+    <%= link_to "Book this bike!", new_bike_booking_path(@bike) %>
+  <% end %>
 </div>
