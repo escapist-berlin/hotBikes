@@ -3,11 +3,13 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # get "bikes", to: "bikes#index"
-  resources :bikes, only: [:index, :new, :create, :show, :bikeall] do
+  resources :bikes, only: [:index, :new, :create, :show, :bikeall, :destroy] do
     resources :bookings, only: [:new, :create]
   end
 
   resources :bookings, only: :destroy
   # Defines the root path route ("/")
   # root "articles#index"
+
+  get "dashboard", to: "pages#dashboard"
 end
