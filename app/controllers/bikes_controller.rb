@@ -29,7 +29,8 @@ class BikesController < ApplicationController
   end
 
   def update
-    @bike = Bike.update(bike_params)
+    @bike = Bike.find(params[:id])
+    @bike.update(bike_params)
     redirect_to bike_path(@bike)
   end
 
