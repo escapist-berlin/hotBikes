@@ -1,15 +1,16 @@
 <div class="show-container">
   <h2><%= @bike.title %></h2>
   <p><%= @bike.price %>€</p>
-
+  <div class="d-flex">
+  </div>
   <% if @bike.photo.attached? %>
     <%= cl_image_tag @bike.photo.key, height: 300, width: 400, crop: :fill %>
   <% end %>
 
   <% if @bike.user == current_user %>
-        <%= link_to "Edit this bike", edit_bike_path(@bike) %>
+      <%= link_to "Edit this bike", edit_bike_path(@bike), class: "button_main my-3" %>
 
   <% else %>
-    <%= link_to "Book this bike!", new_bike_booking_path(@bike) %>
+      <%= link_to "Book this bike!", new_bike_booking_path(@bike), class: "button_main my-3" %>
   <% end %>
 </div>

@@ -73,31 +73,14 @@ transition: all 0.2s linear;
 
 }
 
-.btn {
-  background-color: #fbeee0;
-  border: 1px solid #422800;
-  border-radius: 30px;
-  box-shadow: #422800 4px 4px 0 0;
-  color: #422800;
-  cursor: pointer;
-  display: inline-block;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 0 18px;
-  line-height: 50px;
-  text-align: center;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
+
 
 .form-group {
   height: 50px;
   width: 4000px;
-  background-color: transparent;
-  border: 2px solid #422800;
-  color: black;
+  background-color: opacity 70%;
+  border: 2px solid #47433d;
+  color: #090909;
   cursor: pointer;
   display: inline-block;
   font-weight: 600;
