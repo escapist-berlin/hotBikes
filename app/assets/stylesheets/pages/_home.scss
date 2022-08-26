@@ -23,7 +23,9 @@ transition: all 0.2s linear;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: right 100%;
+  // background-position: 50% -27%;
+  // background-position: right 100%;
+  // background-position: 27% 50%;
   // display: flex;
   // justify-content: space-around;
   // align-items: center;
@@ -71,24 +73,7 @@ transition: all 0.2s linear;
 
 }
 
-.btn {
-  background-color: #fbeee0;
-  border: 1px solid #422800;
-  border-radius: 30px;
-  box-shadow: #422800 4px 4px 0 0;
-  color: #422800;
-  cursor: pointer;
-  display: inline-block;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 0 18px;
-  line-height: 50px;
-  text-align: center;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
+
 
 .form-group {
   height: 50px;
@@ -102,7 +87,6 @@ transition: all 0.2s linear;
   font-size: 18px;
   line-height: 50px;
   text-align: center;
-  text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;

@@ -17,6 +17,7 @@ alex = User.create(email: "alex@gmail.com", password: "alex123")
 lauren = User.create(email: "lauren@gmail.com", password: "lauren123")
 yemmy = User.create(email: "yemmy@gmail.com", password: "yemmy123")
 users = [denis, alex, lauren, yemmy]
+bikepictures = ["isert url's"]
 
 locations = ["Berlin", "Hamburg", "Munich"]
 
@@ -26,6 +27,10 @@ puts 'Creating 10 fake bikes...'
     title: Faker::Company.name,
     price: rand(10..50),
     address: locations.sample
+    # insert pull picture from bp when new bike is created.
+    # if Bike.new = true
+    #   # get from bikepictures
+    # end
   )
   bike.user = users.sample
   bike.save!
