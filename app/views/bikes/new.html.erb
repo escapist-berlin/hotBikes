@@ -1,10 +1,12 @@
-<div class="container form-booking">
+<div class="container form-card">
   <%= simple_form_for(@bike) do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <%= f.label :price %>
-    <%= f.number_field :price %>
+    <div class="d-flex flex-column">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      <%= f.label :price %>
+      <%= f.number_field :price %>
+    </div>
     <%= f.input :photo, as: :file %>
-    <%= f.submit "Create bike", class: 'btn btn-info'%>
+    <%= f.submit "Create bike", class: 'button_main'%>
   <% end %>
 </div>
